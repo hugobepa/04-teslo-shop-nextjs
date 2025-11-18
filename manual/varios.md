@@ -32,3 +32,5 @@ https://codesandbox.io/p/sandbox/zmyy72?file=%2Fsrc%2FApp.jsx (demos -thumbs gal
 https://codesandbox.io/p/sandbox/k3cyyc?file=%2Fsrc%2Fmain.jsx
 https://gist.github.com/Klerith/a2cc36d6c88693f656cbb47c211dd2ea  (css slideshow)
 
+https://www.prisma.io/docs/getting-started/quickstart-prismaPostgres
+
