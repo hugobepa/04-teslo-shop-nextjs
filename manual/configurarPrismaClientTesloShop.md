@@ -379,8 +379,115 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 export default prisma
 
 ````
+ 
+
+20. modificar archivo "./src/seed/seed-database.ts " par verificar coexion base de datos:
+
+````
+import { initialData } from "./seed";
+import prisma from '../lib/prisma';
+
+async function main() {
+    //console.log(initialData)
+
+    //1. Borrar registros previos
+  await Promise.all( [
+  await prisma.productImage.deleteMany(),
+  await prisma.product.deleteMany(),
+  await prisma.category.deleteMany(),
+   ]);
+
+  //   await Promise.all( [  
+  //  prisma.productImage.deleteMany(),
+  //  prisma.product.deleteMany(),
+  //  prisma.category.deleteMany(),
+  //  ]);  
+
+   //await prisma.productImage.deleteMany(),
+  //await prisma.product.deleteMany(),
+  //await prisma.category.deleteMany(),
 
 
+
+   //await prisma.productImage.deleteMany()
+   
+   
+
+    console.log('seed ejecutado correctamente')
+}
+
+
+( () => {
+
+  //if ( process.env.NODE_ENV === 'production' ) return;
+
+
+  main();
+} )();
+
+
+````
+
+21. terminal proyecto: npm run seed
+
+````
+> teslo-shop-nextjs@0.1.0 seed
+> ts-node src/seed/seed-database.ts
+
+seed ejecutado correctamente
+
+````
+
+#Reference error: export is not defined in ES module scope
+
+1. si diera error de este tipo al  hacer "npm run seed":
+
+````
+> teslo-shop-nextjs@0.1.0 seed
+> ts-node src/seed/seed-database.ts
+
+Reference error: export is not defined in ES module scope
+at file: ///C:/user/..../clients.ts .48:23
+
+````
+
+2. En "/prisma/schema.prisma" remplazar tabla "generador client":
+
+````
+
+    /* original creado automaticamente
+    generator client {
+      provider = "prisma-client"
+      output   = "../src/generated/prisma"
+    }
+    */
+        //reemplazado
+        generator client {
+            provider     = "prisma-client"
+            output       = "../src/generated/prisma"
+            moduleFormat = "cjs"
+        }
+     
+     
+    datasource db {
+      provider = "postgresql"
+      url      = env("DATABASE_URL")
+    }
+
+
+````
+   
+ 3. generar cliente otra vez, terminal proyecto:  npx prisma generate
+
+ 4. ejecutar semilla, terminal proyecto:  npm run seed 
+
+ ````
+> teslo-shop-nextjs@0.1.0 seed
+> ts-node src/seed/seed-database.ts
+
+seed ejecutado correctamente
+
+ ````  
 
 #opcional
 min 1:14
@@ -396,4 +503,10 @@ import { PrismaClient } from '../generated/prisma/client'
 npm add @prisma/client@latest
 ReferenceError: exports is not defined in ES module scope
 ------------------------------
-
+https://www.prisma.io/docs/orm/prisma-schema/overview/generators#field-reference-1
+https://github.com/prisma/prisma/issues/27600
+    generator client {
+        provider     = "prisma-client"
+        output       = "../src/generated/prisma"
+        moduleFormat = "cjs"
+    }

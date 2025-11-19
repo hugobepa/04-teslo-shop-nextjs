@@ -34,3 +34,27 @@ https://gist.github.com/Klerith/a2cc36d6c88693f656cbb47c211dd2ea  (css slideshow
 
 https://www.prisma.io/docs/getting-started/quickstart-prismaPostgres
 
+#react hook form
+https://react-hook-form.com/
+https://react-hook-form.com/get-started
+
+npm install react-hook-form
+
+import { useForm, SubmitHandler } from "react-hook-form"
+
+#The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient
+
+/prisma/schema.prisma:
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/no-rust-engine#3-install-the-driver-adapter
+https://www.prisma.io/docs/accelerate/getting-started
+https://community.redwoodjs.com/t/prisma-data-proxy-accelerate-pulse-mini-guide-help-me/5250/13
+https://github.com/prisma/prisma/discussions/22375
+https://www.prisma.io/docs/orm/reference/connection-urls
+
+
