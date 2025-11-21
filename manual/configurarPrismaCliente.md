@@ -47,7 +47,7 @@ https://pris.ly/d/getting-started
 ````
 
 4. root "prima.config.ts" añadir "import 'dotenv/config'"  recordar instalarlo antes links " npm i dotenv ":
-       
+   //https://www.prisma.io/docs/orm/reference/prisma-config-reference#engine    
 ````
 import 'dotenv/config'
 import { defineConfig, env } from "prisma/config";

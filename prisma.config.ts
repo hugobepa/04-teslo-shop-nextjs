@@ -1,3 +1,5 @@
+//https://www.prisma.io/docs/orm/reference/prisma-config-reference#engine
+
 import 'dotenv/config'
 import { defineConfig, env } from "prisma/config";
 

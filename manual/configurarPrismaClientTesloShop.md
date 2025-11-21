@@ -6,6 +6,7 @@
  //https://github.com/DevTalles-corp/next-teslo-shop/blob/fin-seccion-16/prisma/schema.prisma
  //https://medium.com/@imvinojanv/mastering-data-relationships-a-comprehensive-guide-to-building-prisma-schemas-99e1fe50a91d
  //https://www.prisma.io/docs/getting-started/quickstart-prismaPostgres
+ //https://www.prisma.io/docs/orm/reference/prisma-config-reference#engine
 
 
 --------video  233 - esquema de prisma- parte 1----
@@ -29,7 +30,7 @@ https://pris.ly/d/getting-started
  ````
 
 4. root "prima.config.ts" añadir "import 'dotenv/config'"  recordar instalarlo antes links " npm i dotenv ":
-       
+ //https://www.prisma.io/docs/orm/reference/prisma-config-reference#engine      
 ````
 import 'dotenv/config'
 import { defineConfig, env } from "prisma/config";
