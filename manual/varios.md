@@ -94,6 +94,7 @@ tableplus--- cambiar un valor de campo y apretar ctrl+ s para cambiarlo
 
 
 #nextjs16
+https://nextjs.org/docs/app/getting-started/installation
 https://www.youtube.com/results?search_query=next+js+16
 https://www.youtube.com/results?search_query=next+js+16
 https://www.youtube.com/watch?v=eUHha5Vgdao
@@ -105,3 +106,12 @@ https://www.youtube.com/watch?v=sDcgvEIJsbg
 https://www.youtube.com/watch?v=XadGb6-Dq3U
 
 #npm run build
+
+#extesion VC quokka
+
+https://nextjs.org/docs/app/getting-started/metadata-and-og-images
+
+
+#probar enclances se verian en redes sociales
+https://www.opengraph.xyz/
+https://ngrok.com/
