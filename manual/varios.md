@@ -1,3 +1,5 @@
+https://github.com/hugobepa?tab=repositories
+
 #varios
 //https://nextjs.org/blog/next-16
 
@@ -110,8 +112,18 @@ https://www.youtube.com/watch?v=XadGb6-Dq3U
 #extesion VC quokka
 
 https://nextjs.org/docs/app/getting-started/metadata-and-og-images
+https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+https://community.vercel.com/t/metadata-and-site-name-seo/2633
 
 
 #probar enclances se verian en redes sociales
 https://www.opengraph.xyz/
 https://ngrok.com/
+
+
+#zustand
+https://zustand.docs.pmnd.rs/guides/nextjs
+https://zustand.docs.pmnd.rs/migrations/migrating-to-v5#requiring-stable-selector-outputs (the result of getServerSnapshot should be cached to avoid an infinite loop- const { itemsInCart, subTotal, tax, total } = useCartStore((state) =>   state.getSummaryInformation() );)
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat (formato moneda)

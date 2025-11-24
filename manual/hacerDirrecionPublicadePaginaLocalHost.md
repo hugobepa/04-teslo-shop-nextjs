@@ -13,6 +13,18 @@
 6. continuar
 7. url raro
 
+#. terminal proyecto: npx tunnelmole 3000 
+solo entra hasta que los tienes abierto
+https://tunnelmole.com/
+https://www.youtube.com/watch?v=TG6_c--4KBs
+3. copiar URL(forwading)
+4. ir  a  https://www.opengraph.xyz/
+5. pegar url de "ngrok.com" en "opengrah"
+6. navegar hasta un producto(por url ngrok) y pegar en https://www.opengraph.xyz/. para ver como quedan las imagenes
+
+
+
+
 #https://ngrok.com/
 
 
@@ -29,6 +41,7 @@ https://www.youtube.com/watch?v=NqCYquO3byk
 
 #. terminal proyecto: npx tunnelmole 3000 
 solo entra hasta que los tienes abierto
+https://tunnelmole.com/
 https://www.youtube.com/watch?v=TG6_c--4KBs
 
 #Certificados AUTOMÁTICOS y GRATIS para CUALQUIER SERVIDOR - Nginx Proxy Manager

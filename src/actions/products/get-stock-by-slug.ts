@@ -27,8 +27,4 @@ export const getStockBySlug = async(slug:string):Promise<number> => {
         return 0;
 
     }
-
-
-
-    return 0;
 }
