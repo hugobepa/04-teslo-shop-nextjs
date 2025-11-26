@@ -1,5 +1,6 @@
 #links
 https://nextjs.org/learn/dashboard-app/adding-authentication (referencia)
+https://authjs.dev/reference/nextjs
 
 https://nextjs.org/learn/dashboard-app/adding-authentication#adding-the-pages-option
 https://nextjs.org/learn/dashboard-app/adding-authentication#adding-the-sign-in-functionality
@@ -102,6 +103,8 @@ export const authConfig:NextAuthConfig = {
 
 10. añadir credenciales en "./src/auth.config.ts":
 
+npm i zod 
+
 ````
 //https://zod.dev/v4/changelog#deprecates-email-etc
 //https://nextjs.org/learn/dashboard-app/adding-authentication#adding-the-sign-in-functionality
@@ -123,7 +126,7 @@ export const authConfig:NextAuthConfig = {
         Credentials({     
       async authorize(credentials) {
         const parsedCredentials = z
-          //.object({ email: z.string().email(), password: z.string().min(6) }) //string().email() decrepated
+          //.object({ email: z.string().email(), password: z.string().min(6) }) //z.string().email() decrepated
           .object({ email: z.email(), password: z.string().min(6) }) //cambiar
           .safeParse(credentials);
 
@@ -173,7 +176,8 @@ export async function authenticate(
 
 ReactDOM.useFormState has been renamed to React.useActionState. Please update %s to use React.useActionState.
 
-
+const[state,dispatch] = useFormState(authenticate,undefined);
+const[state,dispatch] = useActionState(authenticate,undefined);
 
 #errores
 
