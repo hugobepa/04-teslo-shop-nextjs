@@ -127,3 +127,38 @@ https://zustand.docs.pmnd.rs/migrations/migrating-to-v5#requiring-stable-selecto
 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat (formato moneda)
+
+
+#encriptar constrsenya
+
+//https://www.npmjs.com/package/bcryptjs (preferida)
+//npm i bcryptjs
+
+https://bcrypt-generator.com/
+https://www.npmjs.com/package/bcrypt
+
+#s:249:12) {
+  clientVersion: '6.19.0',
+  errorCode: 'P2038',
+  retryable: undefined,
+  page: '/'
+}
+ GET / 500 in 5.0s 
+https://github.com/prisma/prisma/issues/28573
+ https://github.com/prisma/prisma/issues/21428
+
+ generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+    change the import: import { PrismaClient } from "@prisma/client";
+
+#base de datos(gratis y al momento)
+
+https://www.prisma.io/docs/postgres/introduction/npx-create-db
+Consigue una base de datos SQL en la nube.
+Sin registro, sin pagos, esperas o configuraciones.
+https://neon.new/
+Ejecuta esto en tu terminal → npx get-db
+
