@@ -10,6 +10,7 @@
     "seed": "ts-node src/seed/seed-database.ts"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.0.1",
     "@prisma/extension-accelerate": "^2.0.2",
     "clsx": "^2.1.1",
     "D": "^1.0.0",

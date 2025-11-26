@@ -1,4 +1,7 @@
+//https://www.prisma.io/docs/getting-started/prisma-orm/quickstart/prisma-postgres
+
 import { initialData } from "./seed";
+//import prisma from '../lib/prisma';
 import prisma from '../lib/prisma';
 
 async function main() {
