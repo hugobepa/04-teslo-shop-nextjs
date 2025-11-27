@@ -9,8 +9,8 @@ import { useFormState } from "react-dom"
 
 export const LoginForm = () => {
    //React.useActionState
-   const[state,dispatch] = useFormState(authenticate,undefined); //possible deprecate
-   //const[state,dispatch] = useActionState(authenticate,undefined);
+   //const[state,dispatch] = useFormState(authenticate,undefined); //possible deprecate
+   const[state,dispatch] = useActionState(authenticate,undefined);
 //    console.log('state') 
 //    console.log({state: state})
 
