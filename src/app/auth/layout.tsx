@@ -10,7 +10,7 @@ export default async function AuthLayout({children}: {
 
   if(session?.user){
     redirect('/');
-  }
+   }
 
   return (
     <main className="flex justify-center">
