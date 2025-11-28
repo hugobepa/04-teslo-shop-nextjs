@@ -105,42 +105,48 @@ index (/src/actions)
      
      NextJS 
 ````
-try {
-    await update({
-      id: Number(forum.id),
-      title: String(formData.get("title")),
-      content: String(formData.get("content")),
-    });
 
-    revalidatePath(`/admin/forums/${forum.id}`);
-    redirect(`/admin/forums`);
-  } catch (error) {
-    console.log(error);
-  }
-};
+#solucion
 
-Error: NEXT_REDIRECT
-    at async logout (C:\Users\User\Documents\programacion2025\nextjs\devtalles\nextcurso\04-teslo-shop-nextjs\.next\dev\server\chunks\ssr\[root-of-the-server]__8ba9bae7._.js:492:9) {
-  digest: 'NEXT_REDIRECT;push;http://localhost:3000/profile;307;'
-}
 
-//https://github.com/nextauthjs/next-auth/discussions/9389
+"/src/actions/auth/logout.ts":
 
-try {
-    await signIn('credentials', {
-      email: formData.get('email'),
-      password: formData.get('password'),
-      redirect: true,
-      redirectTo,
-    });
-  } catch (error) {
-    if (isRedirectError(error)) {
-      console.error('Redirect error!: ', error);
-      throw error;
+````
+    'use server'
+     
+    import { signOut } from "@/auth.config"
+    import { redirect } from "next/navigation";
+     
+     
+    export const logout = async () => {
+        
+        await signOut({ redirect: false });
+        
+        
     }
+````
 
-    redirect(`/login?error=credentials`);
-  }
+"sidebar.tsx":
 
-  https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects
-  https://angrydeveloper.medium.com/nextjs-cant-redirect-to-localhost-in-different-port-a2b89cf76fe3
+````
+    const logOutAndCloseMenu=()=>
+    {
+         closeMenu();
+         logout()
+    }
+     
+    return(
+    ...
+     
+     
+    <Link
+              //onClick={() => logout()} 
+              onClick ={()=>logOutAndCloseMenu()}
+              className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all" 
+              href={"/"} 
+                   >
+              <IoLogOutOutline size={30} /> 
+              <span className="ml-3 text-xl">Salir</span> 
+            </Link>
+
+   ````         
