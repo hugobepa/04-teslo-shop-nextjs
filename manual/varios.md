@@ -162,5 +162,15 @@ Sin registro, sin pagos, esperas o configuraciones.
 https://neon.new/
 Ejecuta esto en tu terminal → npx get-db
 
+#formularios
+/https://react-hook-form.com/get-started
+//https://nextjs.org/learn/dashboard-app/adding-authentication
+//https://dev.to/vjygour/react-hook-form-validation-c61
+//https://deadsimplechat.com/blog/react-hook-form-to-add-form-validation-in-react/
+//https://olaishola.medium.com/handling-form-validations-in-react-with-react-hook-form-and-zod-18e070bbdda6
+//https://stackoverflow.com/questions/63000638/form-pattern-validation-with-react-hook-form
 
+
+npm install react-hook-form
+import { useForm, SubmitHandler } from "react-hook-form"
 

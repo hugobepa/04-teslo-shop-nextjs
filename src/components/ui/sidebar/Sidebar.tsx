@@ -20,8 +20,9 @@ export const Sidebar = () => {
     logout()
   }
 
-  const onLogout = async () => {
-    await logout();
+  //si falla async y wait
+  const onLogout = () => {
+     logout();
     //await closeMenu();
     window.location.replace('/')
   }

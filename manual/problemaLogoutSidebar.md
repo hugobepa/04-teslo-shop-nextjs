@@ -155,10 +155,12 @@ index (/src/actions)
 
    Intenta colocar el logout en el Sidebar.tsx de esta manera:
 ````
-    const onLogout = async () => {
-       await logout();
-       window.location.replace('/')
-    }
+    //si falla async y wait
+  const onLogout = () => {
+     logout();
+    //await closeMenu();
+    window.location.replace('/')
+  }
 ````
 Y llamas la función:
 ````
