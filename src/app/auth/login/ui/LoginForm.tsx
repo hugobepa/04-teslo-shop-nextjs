@@ -10,7 +10,7 @@ import { IoInformationOutline } from "react-icons/io5"
 //import { type } from '../../../../../.next/dev/types/routes';
 
 export const LoginForm = () => {
-  const router = useRouter();
+  //const router = useRouter();
   //const[state,dispatch] = useFormState(authenticate,undefined); //possible deprecate
   const [state, dispatch] = useActionState(authenticate, undefined);
   //    console.log('state') 
@@ -19,7 +19,8 @@ export const LoginForm = () => {
   useEffect(() => {
 
     if(state === 'Success'){
-        router.replace('/');
+        //router.replace('/');
+        window.location.replace('/'); //aparezca session en consola
     }
    
   }, [state])
