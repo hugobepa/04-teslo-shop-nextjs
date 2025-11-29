@@ -150,3 +150,24 @@ index (/src/actions)
             </Link>
 
    ````         
+
+   #otra solucion
+
+   Intenta colocar el logout en el Sidebar.tsx de esta manera:
+````
+    const onLogout = async () => {
+       await logout();
+       window.location.replace('/')
+    }
+````
+Y llamas la función:
+````
+    <button
+      className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+                onClick={() => onLogout()}
+              >
+                <IoLogOutOutline size={25} />
+                <span className="ml-3 text-lg">Salir</span>
+              </button>
+````
+              

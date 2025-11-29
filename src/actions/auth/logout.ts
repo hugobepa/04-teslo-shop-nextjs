@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 export const logout = async () => {
     
     await signOut({ redirect: false });
+    //await signOut();
     
     
 }

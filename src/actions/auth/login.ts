@@ -44,11 +44,22 @@ export async function authenticate(
 try {
     //await sleep(2);   
 
-    await signIn('credentials',Object.fromEntries (formData));
+    //await signIn('credentials',Object.fromEntries (formData));
+      await signIn('credentials',{
+         ...Object.fromEntries(formData),
+    redirect: false,
+      })
+
+    return 'Success'
   } catch (error) {
+      console.log(error)
+    //  if((error as any).type === 'CredentialsSignin' ){
+    //      return 'CredentialsSignin';
+    //  }
    // if (error as Error.message.includes('CredentialsSignin')) 
     //{
-       return 'CredentialsSignin';
+      return 'CredentialsSignin';
+       //return 'unknowError';
     //}
     //throw error;
   }

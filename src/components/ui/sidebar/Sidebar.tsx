@@ -4,8 +4,9 @@ import { logout } from "@/actions";
 import { useUIStore } from "@/store";
 import clsx from "clsx";
 import Link from "next/link";
+import { useActionState } from "react";
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from "react-icons/io5"
-
+import { useSession } from "next-auth/react";
 
 
 export const Sidebar = () => {
@@ -19,8 +20,13 @@ export const Sidebar = () => {
      logout()
 }
 
+    const {data: session} = useSession();
+    console.log({session})
+
   return (
     <div>
+       
+
 
         {/**Background black */}
         {
@@ -93,6 +99,7 @@ export const Sidebar = () => {
 
         <Link 
         href="/auth/login"
+         onClick={()=>closeMenu()}
         className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
         >
           <IoLogInOutline size={30} /> 

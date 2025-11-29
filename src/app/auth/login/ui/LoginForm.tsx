@@ -3,18 +3,28 @@
 import { authenticate } from "@/actions"
 import clsx from "clsx"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
-import { useActionState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { useActionState, useEffect } from "react"
 import { useFormState, useFormStatus } from "react-dom"
 import { IoInformationOutline } from "react-icons/io5"
 //import { type } from '../../../../../.next/dev/types/routes';
 
 export const LoginForm = () => {
-  //React.useActionState
+  const router = useRouter();
   //const[state,dispatch] = useFormState(authenticate,undefined); //possible deprecate
   const [state, dispatch] = useActionState(authenticate, undefined);
   //    console.log('state') 
   //    console.log({state: state})
+
+  useEffect(() => {
+
+    if(state === 'Success'){
+        router.replace('/');
+    }
+   
+  }, [state])
+  
+
 
 
   console.log('state')
