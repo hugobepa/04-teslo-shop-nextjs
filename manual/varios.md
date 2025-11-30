@@ -184,4 +184,9 @@ https://github.com/ant-design/ant-design
 www.subframe.com
 https://www.heroui.com/
 https://github.com/LoveRetro/NextUI
-a
+
+
+#https://zustand.docs.pmnd.rs/getting-started/introduction
+npm install zustand
+import { create } from 'zustand'
+
