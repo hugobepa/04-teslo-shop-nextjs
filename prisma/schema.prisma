@@ -96,4 +96,13 @@ model User {
   password      String
   role          Role      @default(user)
   image         String?
+
+  
 }
+
+model Country {
+  id          String        @id
+  name        String
+ 
+}
+

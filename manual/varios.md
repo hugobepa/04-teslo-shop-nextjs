@@ -174,3 +174,14 @@ Ejecuta esto en tu terminal → npx get-db
 npm install react-hook-form
 import { useForm, SubmitHandler } from "react-hook-form"
 
+#ver BBDD x prisma
+npx prisma studio
+
+#framesUI
+
+https://ui.shadcn.com/
+https://github.com/ant-design/ant-design
+www.subframe.com
+https://www.heroui.com/
+https://github.com/LoveRetro/NextUI
+a

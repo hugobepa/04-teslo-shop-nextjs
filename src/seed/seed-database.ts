@@ -3,17 +3,19 @@
 import { initialData } from "./seed";
 //import prisma from '../lib/prisma';
 import prisma from '../lib/prisma';
+import { countries } from "./seed-countries";
 
 async function main() {
     //console.log(initialData)
 
     //1. Borrar registros previos
-  await Promise.all( [  
-  await prisma.user.deleteMany(),  
-  await prisma.productImage.deleteMany(),
-  await prisma.product.deleteMany(),
-  await prisma.category.deleteMany(),
-   ]);  
+ // await Promise.all( [  
+  await prisma.user.deleteMany(); 
+  await prisma.country.deleteMany();
+  await prisma.productImage.deleteMany();
+  await prisma.product.deleteMany();
+  await prisma.category.deleteMany();
+  // ]);  
    
   //   await Promise.all( [  
   //  prisma.productImage.deleteMany(),
@@ -32,6 +34,9 @@ async function main() {
   });
 
 
+  await prisma.country.createMany({
+    data: countries
+  })
    //categorias
 
    //1 insercion
