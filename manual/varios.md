@@ -190,3 +190,7 @@ https://github.com/LoveRetro/NextUI
 npm install zustand
 import { create } from 'zustand'
 
+## prisma transaciones
+https://www.prisma.io/docs/orm/prisma-client/queries/transactions  #interactive transactions
+https://dev.to/reyronald/dealing-with-open-database-transactions-in-prisma-3clk
+https://medium.com/@moiserushanika2006/mastering-database-rollbacks-with-prismas-transactional-finesse-9156b8319bb1

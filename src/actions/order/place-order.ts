@@ -1,8 +1,11 @@
+//https://www.prisma.io/docs/orm/prisma-client/queries/transactions  #interactive transactions
+
 'use server'
 
 import { auth } from "@/auth.config";
 import type { Address, Size } from "@/interfaces";
 import prisma from "@/lib/prisma";
+import { OrderAddress, OrderItem } from '../../generated/prisma/browser';
 
 interface ProductToOrder{
     productId: string;
@@ -61,4 +64,62 @@ export const placeOrder = async (productIds: ProductToOrder[],address: Address) 
     //console.log({subTotal,tax,total})
 
     //crear transaccion BBDD
+
+    const prismaTx = await prisma.$transaction(async(tx)=>{
+
+        //1.actualizar el stock de los productos
+
+
+        //2.crear la orden - encabezado-detalle
+        const order = await tx.order.create({
+            data:{
+                userId: userId,
+                itemsInOrder: itemsInOrder,
+                subTotal: subTotal,
+                tax: tax,
+                total: total,
+                
+
+                OrderItem: {
+                    createMany:{
+                        data: productIds.map(p =>({
+                            quantity: p.quantity,
+                            size: p.size,
+                            productId: p.productId,
+                            price: products.find(product=> product.id === p.productId)?.price ?? 0
+
+                        }))
+                    }
+                }
+            }
+
+        })
+
+        //validar, price === 0 disparar Error
+       
+
+        //3. crear dirrecion de la orden
+        const{country,...restAddress}= address;
+        const orderAddress = await tx.orderAddress.create({
+            data:{
+                ...restAddress,
+                countryId: country,
+                orderId: order.id,
+            }
+        })
+
+
+
+
+
+        return {
+            order: order,
+            OrderAddress: orderAddress,
+            updateProducts: [],
+           
+        }
+
+    })
+
+
 }
