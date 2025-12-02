@@ -194,3 +194,21 @@ import { create } from 'zustand'
 https://www.prisma.io/docs/orm/prisma-client/queries/transactions  #interactive transactions
 https://dev.to/reyronald/dealing-with-open-database-transactions-in-prisma-3clk
 https://medium.com/@moiserushanika2006/mastering-database-rollbacks-with-prismas-transactional-finesse-9156b8319bb1
+
+
+#botones paypal
+https://www.npmjs.com/package/@paypal/react-paypal-js 
+npm i @paypal/react-paypal-js                     
+````
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
+export default function App() {
+    return (
+        <PayPalScriptProvider options={{ clientId: "test" }}>
+            <PayPalButtons style={{ layout: "horizontal" }} />
+        </PayPalScriptProvider>
+    );
+
+ ````
+
+ a

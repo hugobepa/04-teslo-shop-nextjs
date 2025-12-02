@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 
-import { Title } from '@/components';
+import { PayPalButton, Title } from '@/components';
 import { initialData } from '@/seed/seed';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -151,23 +151,7 @@ export default async function ({ params }: Props) {
 
             <div className="mt-5 mb-2 w-full">
 
-            <div className={
-              clsx(
-                "flex items-center rounded-lg py-2 px-3.5 text-xs font-bold text-white mb-5",
-                {
-                  'bg-red-500': !order!.isPaid,
-                  'bg-green-700': order!.isPaid,
-                }
-              )
-            }>
-              <IoCardOutline size={30} />
-              {/* <span className="mx-2">Pendiente de pago</span> */}
-              <span className="mx-2">
-                {
-                  order?.isPaid ? 'Pagada' : 'No pagada'
-                }
-              </span>
-            </div>
+           <PayPalButton/>
 
 
             </div>
