@@ -18,6 +18,7 @@ interface State{
     addProductTocart:(product:CartProduct)=>void
     updateProductQuantity:(product:CartProduct,quantity: number)=>void
     removeProduct:(product:CartProduct)=>void
+    clearCart: ()=>void;
 }
 
 export const useCartStore = create<State>()(
@@ -103,7 +104,11 @@ export const useCartStore = create<State>()(
         )
         set({cart:updateCartProducts})
        },
-})
+
+        clearCart: () => {
+        set({ cart: [] });
+      },
+})         
         ,{
           name:'shopping-cart',
           //skipHydration: true,

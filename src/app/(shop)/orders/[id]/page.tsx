@@ -26,6 +26,8 @@ export default async function ( { params }: Props ) {
 
   const { id } = await params;
 
+  //TODO: llamar al server action
+
   // Todo: verificar
   // redirect(/)
 
@@ -36,7 +38,7 @@ export default async function ( { params }: Props ) {
 
       <div className="flex flex-col w-[1000px]">
 
-        <Title title={ `Orden #${ id }` } />
+        <Title title={ `Orden #${ id.split('-').at(-1) }` } />
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
