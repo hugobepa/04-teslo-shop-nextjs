@@ -8,7 +8,7 @@
 'use client'
 import  { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js"
 import { CreateOrderData,CreateOrderActions } from '@paypal/paypal-js';
-import { TransactionClient } from '../../generated/prisma/internal/prismaNamespace';
+
 
 interface Props{
   orderId: string;
