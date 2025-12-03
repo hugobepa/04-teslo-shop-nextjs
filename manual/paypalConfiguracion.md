@@ -3,6 +3,10 @@
 https://developer.paypal.com/home/    (gmail)
 https://www.npmjs.com/package/@paypal/react-paypal-js  (PROVIDER Y BUTTON)
 ## IMPORTANTE chequear siempre pestaña navegador, al entrar hacer pruebas de pago : sandbox.paypal.com
+https://developer.paypal.com/sdk/js/reference/#createorder
+https://developer.paypal.com/sdk/js/reference/#onapprove
+https://developer.paypal.com/docs/api/orders/v2/#orders-create-request-body
+https://developer.paypal.com/docs/api/orders/v2/
 
 
 usuario(botton) -- dasboard - sandbox
