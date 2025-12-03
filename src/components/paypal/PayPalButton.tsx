@@ -7,6 +7,7 @@
 'use client'
 import  { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js"
 import { CreateOrderData,CreateOrderActions } from '@paypal/paypal-js';
+import { setTransactionId } from "@/actions";
 
 
 interface Props{
@@ -53,6 +54,11 @@ const createOrder =async(data: CreateOrderData, actions: CreateOrderActions): Pr
 
 
 console.log({transactionId})
+
+const {ok} = await setTransactionId(orderId,transactionId);
+ if(!ok){
+  throw new Error ('no se pudo actualizar la orden')
+}
 
 return transactionId;
 }
