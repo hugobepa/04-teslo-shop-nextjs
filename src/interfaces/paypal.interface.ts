@@ -51,6 +51,7 @@ export interface PurchaseUnit {
     shipping:           Shipping;
     supplementary_data: SupplementaryData;
     payments:           Payments;
+    invoice_id:         string;
 }
 
 export interface PurchaseUnitAmount {

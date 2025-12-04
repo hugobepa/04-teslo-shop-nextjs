@@ -42,7 +42,7 @@ const createOrder =async(data: CreateOrderData, actions: CreateOrderActions): Pr
   intent: 'CAPTURE',
    purchase_units: [
         {
-          //invoice_id: orderId,  //!cuidado se registra una sola vez por orden y proceso
+          invoice_id: orderId,  //!cuidado se registra una sola vez por orden y proceso
           amount: {
            value: `${rountedAmount}`,   //'100'
            currency_code:'EUR' //'USD'
