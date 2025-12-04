@@ -211,4 +211,14 @@ export default function App() {
 
  ````
 
- a
+#fecth cache: 'no store'
+//https://nextjs.org/docs/app/api-reference/functions/fetch ( cache: 'no-store' y revalidate)
+https://nextjs.org/docs/app/getting-started/fetching-data
+https://medium.com/@ademyalcin27/data-fetching-next-js-15-559487770c9b
+//https://dev.to/lico/understanding-fetch-cache-with-vanilajs-and-nextjs-5g81
+https://staticmania.com/blog/how-to-use-next-js-fetch-api
+
+
+ #winstonLog
+ https://medium.com/@diego.coder/logs-en-node-js-con-winston-7fdf8acb24e2
+https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/

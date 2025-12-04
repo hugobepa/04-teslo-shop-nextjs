@@ -1,11 +1,15 @@
+//https://nextjs.org/docs/app/api-reference/functions/fetch ( cache: 'no-store' y revalidate)
+//https://nextjs.org/docs/app/getting-started/fetching-data
+
 'use server'
 
 import { PayPalOrderStatusResponse } from "@/interfaces";
+import prisma from "@/lib/prisma";
 
 export const paypalCheckPayments =async (paypalTransactionId: string) => {
   //console.log({paypalTransactionId});
   const authToken =await getPayPalBearerToken();
-  console.log({authToken})
+  //console.log({authToken})
 
 if(!authToken){
     return{
@@ -15,6 +19,7 @@ if(!authToken){
 }
 
 const resp = await verifyPayPalPayment(paypalTransactionId,authToken);
+//console.log({resp})
 
 if(!resp){
   return{
@@ -25,7 +30,7 @@ if(!resp){
 
 const{status,purchase_units} =resp;
 //TODO: invoiceID const {} = purchase_units[0];
-
+//console.log({status,purchase_units})
 if(status !== 'COMPLETED'){
   return{
     ok: false,
@@ -35,8 +40,30 @@ if(status !== 'COMPLETED'){
 
 
 //TODO: realizar la actualizacion en nuestra BBDD
+try {
+  console.log({status,purchase_units})
+  //b937fa06-e7f4-497e-9041-648b1c08a620
+  await prisma.order.update({
+    where:{id:'b937fa06-e7f4-497e-9041-648b1c08a620'},
+    data:{
+      isPaid: true,
+      paidAt: new Date(),
+    }
+  })
 
-console.log({status,purchase_units})
+//TODO: REVALIDAR UN PATH
+
+
+} catch (error) {
+  console.log({error})
+  return{
+    ok:false,
+    message: '500-El pago no se pudo realizar',
+  }
+  
+}
+
+
 
 }
 
@@ -65,7 +92,10 @@ const getPayPalBearerToken = async (): Promise<string | null> => {
   };
 
   try {
-    const result = await fetch(oauth2Url, requestOptions).then(r=>r.json());
+    const result = await fetch(oauth2Url,{
+      ...requestOptions,
+      cache:'no-store'
+    }).then(r=>r.json());
     return result.access_token;
   } catch (error) {
     console.log(error);
@@ -86,8 +116,12 @@ const requestOptions = {
 };
 
 try {
- const resp = await fetch(paypalOrderUrl, requestOptions).then(r => r.json())
-
+ const resp = await fetch(paypalOrderUrl, {
+  ...requestOptions,
+  cache:'no-store'
+ }  
+ ).then(r => r.json())
+console.log({resp})
  return resp;
 
 } catch (error) {
