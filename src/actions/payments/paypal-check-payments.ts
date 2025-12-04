@@ -42,8 +42,7 @@ if(status !== 'COMPLETED'){
 
 //TODO: realizar la actualizacion en nuestra BBDD
 try {
-  console.log({status,purchase_units})
-  //b937fa06-e7f4-497e-9041-648b1c08a620
+  //console.log({status,purchase_units})
   await prisma.order.update({
     where:{id:orderId},
     data:{
@@ -126,7 +125,7 @@ try {
   cache:'no-store'
  }  
  ).then(r => r.json())
-console.log({resp})
+//console.log({resp})
  return resp;
 
 } catch (error) {
