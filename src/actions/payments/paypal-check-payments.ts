@@ -1,5 +1,7 @@
 'use server'
 
+import { PayPalOrderStatusResponse } from "@/interfaces";
+
 export const paypalCheckPayments =async (paypalTransactionId: string) => {
   //console.log({paypalTransactionId});
   const authToken =await getPayPalBearerToken();
@@ -12,6 +14,29 @@ if(!authToken){
     }
 }
 
+const resp = await verifyPayPalPayment(paypalTransactionId,authToken);
+
+if(!resp){
+  return{
+    ok:false,
+    message:'Error al verificar el pago',
+  }
+}
+
+const{status,purchase_units} =resp;
+//TODO: invoiceID const {} = purchase_units[0];
+
+if(status !== 'COMPLETED'){
+  return{
+    ok: false,
+    message: 'Aun no se ha pagado en Paypal',
+  }
+}
+
+
+//TODO: realizar la actualizacion en nuestra BBDD
+
+console.log({status,purchase_units})
 
 }
 
@@ -49,3 +74,26 @@ const getPayPalBearerToken = async (): Promise<string | null> => {
 };
 
 
+const verifyPayPalPayment = async (paypalTransactionId: string,bearerToken: string): Promise<PayPalOrderStatusResponse|null>  => {
+    const paypalOrderUrl = `${process.env.PAYPAL_ORDERS_URL}/${paypalTransactionId}`
+
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${bearerToken}`);
+
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+};
+
+try {
+ const resp = await fetch(paypalOrderUrl, requestOptions).then(r => r.json())
+
+ return resp;
+
+} catch (error) {
+  console.log({error})
+  return null;
+}
+
+  
+}

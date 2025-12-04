@@ -64,7 +64,7 @@ return transactionId;
 }
 
 const onApprove =async(data: OnApproveData, actions: OnApproveActions)=>{
- console.log({onApprove})
+ //console.log({onApprove})
   const details = await actions.order?.capture();
   if(!details) return;
   //verificacion de pago
