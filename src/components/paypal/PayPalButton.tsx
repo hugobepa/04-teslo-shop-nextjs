@@ -74,9 +74,13 @@ const onApprove =async(data: OnApproveData, actions: OnApproveActions)=>{
 
 
   return (
-    <PayPalButtons
+    <div className="relative z-0">
+       <PayPalButtons
     createOrder={createOrder}
     onApprove={onApprove}
     />
+
+    </div>
+   
   )
 }
