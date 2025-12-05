@@ -82,6 +82,8 @@ export default async function () {
 
           </tbody>
         </table>
+
+          {/* <Pagination totalPage={3}/>   //toddo pendiente    */}
       </div>
     </>
   );

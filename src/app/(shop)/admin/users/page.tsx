@@ -3,7 +3,7 @@
 export const revalidate = 0;
 
 import { getOrdersByUser, getPaginatedOrders, getPaginaterUsers } from '@/actions';
-import { Title } from '@/components';
+import { Pagination, Title } from '@/components';
 
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
@@ -25,8 +25,10 @@ export default async function () {
       <Title title="Mantenimiento usuarios" />
 
       <div className="mb-10">
-       <UsersTable users={users}/>      
-       </div>
+       <UsersTable users={users}/> 
+
+       {/* <Pagination totalPage={3}/>   //toddo pendiente    */}
+        </div>
     </>
   );
 }
