@@ -2,8 +2,7 @@
 
 import { changeUserRole } from "@/actions"
 import { User } from "@/interfaces"
-import Link from "next/link"
-import { IoCardOutline } from "react-icons/io5"
+
 
 
 interface Props {
