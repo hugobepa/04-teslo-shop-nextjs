@@ -1,4 +1,4 @@
-sino hay imagenes aparece placeholder
+sino hay imagenes aparece placeholder   const imagenVacia = '/imgs/placeholder.jpg'
 consent Cookies
 orderatbale usuario paginador, filtros
 useraTable paginador, filtros
