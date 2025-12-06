@@ -232,6 +232,13 @@ https://www.telerik.com/blogs/zod-typescript-schema-validation-made-easy
 #crear dirreciones de imagen
 https://cloudinary.com/
 
+
+https://nextjs.org/docs/messages/next-image-unconfigured-host
+
+Invalid src prop (https://res.cloudinary.com/dmistskcm/image/upload/v1765051384/kfgufykooiooodobmnvg.avif) on `next/image`, hostname "res.cloudinary.com" is not configured under images in your `next.config.js`
+
+//error 
+
 https://dev.to/chaudharidevam/fixing-high-and-critical-vulnerabilities-in-npm-using-npm-audit-n6p
 
  run `npm fund` for details
