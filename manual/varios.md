@@ -228,3 +228,17 @@ https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-wi
 [esquemasValidacionZod](https://zod.dev/api)
 https://zod.dev/v4/changelog (dprecrteds)
 https://www.telerik.com/blogs/zod-typescript-schema-validation-made-easy
+
+#crear dirreciones de imagen
+https://cloudinary.com/
+
+https://dev.to/chaudharidevam/fixing-high-and-critical-vulnerabilities-in-npm-using-npm-audit-n6p
+
+ run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
