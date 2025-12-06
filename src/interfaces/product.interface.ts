@@ -25,7 +25,7 @@ export interface CartProduct {
 export interface ProductImage {
     id: number;
     url: string;
-    productId?: string; //quitar interrogante si falla mas adelante
+    productId: string; //productId?: string;
 }
 
 

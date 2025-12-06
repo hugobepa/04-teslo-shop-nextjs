@@ -22,17 +22,18 @@ export default async function  ProductPage({params}:Props) {
     //get-categories.ts  getCategories
 
     //todo: new
-    if(!product) {
+    if(!product && slug !== 'new') {
         redirect('/admin/products')
     }
 
-    const title = (slug === 'new') ? 'Nuevo producto' : 'Editar producto'
+    const title = (slug === 'new') ? 'Nuevo producto' : `Editar producto  ${product?.title}`
 
+    //Title title={product?.title ?? ''}
   return (
    <>
-        <Title title={product?.title ?? ''} />
+        <Title title={title} />
 
-        <ProductForm product={product}  categories={categories}/>
+        <ProductForm product={product ?? {}}  categories={categories}/>
 
     </>
   );
