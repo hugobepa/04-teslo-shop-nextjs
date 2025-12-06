@@ -2,7 +2,8 @@
 //https://zod.dev/v4/changelog
 'use server'
 
-import { Gender } from '@/generated/prisma/client';
+import { Gender, Product, Size } from '@/generated/prisma/client';
+import prisma from '@/lib/prisma';
 //import { Gender } from '@/generated/prisma/enums';
 import {z} from 'zod'
 
@@ -40,7 +41,45 @@ export const createUpdateProduct =async (formData: FormData) => {
         return{ok:false}
     }
     
-    console.log(productParsed.data)
+    const product = productParsed.data;
+    //eliminar espacios en blanco, substituitlos por "-". Y elminar espacios prin/final
+    product.slug = product.slug.toLocaleLowerCase().replace(/ /g,'-').trim();
+
+    const{id,...rest}=product;
+
+    const prismaTx = await prisma.$transaction(async(tx)=>{
+
+        let product: Product
+        const tagsArray = rest.tags.split(',').map(tag=> tag.trim().toLocaleLowerCase())
+
+        if(id){
+            //actualizar
+            product =await prisma.product.update({
+                where: {id},
+                data:{
+                    ...rest,
+                    sizes:{
+                        set: rest.sizes as Size[]
+                    },
+                    tags:{
+                        set: tagsArray
+                    }
+                }
+            })
+
+            console.log({updateProduct: product})
+        }else{
+            //crear
+        }
+
+        return{
+
+        }
+    })
+
+
+    //TODO: revalidatePaths
+
 
     return{
         ok:true
