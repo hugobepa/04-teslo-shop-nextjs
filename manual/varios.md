@@ -223,4 +223,8 @@ https://staticmania.com/blog/how-to-use-next-js-fetch-api
  https://medium.com/@diego.coder/logs-en-node-js-con-winston-7fdf8acb24e2
 https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
 
-aaaa
+
+#create-update-product
+[esquemasValidacionZod](https://zod.dev/api)
+https://zod.dev/v4/changelog (dprecrteds)
+https://www.telerik.com/blogs/zod-typescript-schema-validation-made-easy
