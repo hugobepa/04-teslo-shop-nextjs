@@ -4,6 +4,7 @@
 
 import { Gender, Product, Size } from '@/generated/prisma/client';
 import prisma from '@/lib/prisma';
+import { revalidatePath } from 'next/cache';
 //import { Gender } from '@/generated/prisma/enums';
 import {z} from 'zod'
 
@@ -47,7 +48,8 @@ export const createUpdateProduct =async (formData: FormData) => {
 
     const{id,...rest}=product;
 
-    const prismaTx = await prisma.$transaction(async(tx)=>{
+    try {
+        const prismaTx = await prisma.$transaction(async(tx)=>{
 
         let product: Product
         const tagsArray = rest.tags.split(',').map(tag=> tag.trim().toLocaleLowerCase())
@@ -91,11 +93,23 @@ export const createUpdateProduct =async (formData: FormData) => {
     })
 
 
-    //TODO: revalidatePaths
-
+    //TODO: revalidation path
+    revalidatePath(`/admin/products`);
+    revalidatePath(`/admin/product/${product.slug}`);
+    revalidatePath(`/products/${product.slug}`);
 
     return{
-        ok:true
+        ok:true,
+        product: prismaTx.product
     }
+    } catch (error) {
+        return{
+            ok:false,
+            message:'revisar logs, no se pudo actualizar/crear'
+        }
+    }
+
+    
+
   
 }

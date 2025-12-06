@@ -1,3 +1,4 @@
+sino hay imagenes aparece placeholder
 consent Cookies
 orderatbale usuario paginador, filtros
 useraTable paginador, filtros
@@ -7,6 +8,7 @@ correo verificacion
 two-factor autentificacion (mirar node curso captiulo 10)
 validar token celular (mirar node curso)
 toats cambio usuario  en listado users
+
 
 section_24_A_MantAdm_
 
