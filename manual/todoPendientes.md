@@ -12,7 +12,7 @@ toats cambio usuario  en listado users
 
 
 section_25_DespTienda_
-
+SolucionWarnings
 git log
 git reset --hard Numerocommit  
 
