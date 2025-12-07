@@ -23,16 +23,16 @@ export const ProductGridItem = ({product}:Props) => {
         <Link href={`/product/${product.slug}`}>
 
 
-             <ProductImageArrayGrid    
+             {/* <ProductImageArrayGrid    
                       images={product.images} 
                       title={product.title}
                        width={500}
                         height={500}
                         className="w-full object-cover rounded"        
-                      /> 
+                      />  */}
 
         
-           {/* <ProductImageGrid    
+           <ProductImageGrid    
                       image={product.images[0]} 
                       title={product.title}
                        width={500}
@@ -40,7 +40,7 @@ export const ProductGridItem = ({product}:Props) => {
                         className="w-full object-cover rounded"
                        
                        
-                      />  */}
+                      /> 
  
          {/* <Image
         src={`/products/${displayImage}`}//src={`/products/${product.images[0]}`}
