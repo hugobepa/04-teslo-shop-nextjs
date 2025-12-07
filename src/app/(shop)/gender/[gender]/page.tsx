@@ -3,7 +3,8 @@
 
 import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid, Title } from "@/components";
-import { Gender } from "@/generated/prisma";
+import { Gender } from "@/generated/prisma/client";
+//import { Gender } from "@/generated/prisma";
 import { Category } from "@/interfaces";
 import { initialData } from "@/seed/seed";
 import { notFound, redirect } from "next/navigation";
@@ -47,7 +48,7 @@ export default async function({ params,searchParams }: Props) {
     'unisex': 'para todos',
   }
    
-   const labelsSubtitle:Record<Category, string> = {
+   const labelsSubtitle:Record<string, string> = {
     'men' : 'para ellos',
     'women': 'para ellas',
     'kid': 'para los peques',

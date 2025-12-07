@@ -1,7 +1,8 @@
  //https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
 'use server';
 
-import { Gender } from "@/generated/prisma";
+import { Gender } from "@/generated/prisma/client";
+//import { Gender } from "@/generated/prisma";
 import prisma from "@/lib/prisma";
 
 

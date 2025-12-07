@@ -8,25 +8,27 @@ import { notFound } from "next/navigation";
 const seedProducts = initialData.products;
 
 interface Props {
-  params: {
-    id: Category;
-  }
+  // params: {
+  //   id: Category;
+  // }
+  params: Promise<{ id: Category }>
+ 
 }
 
 
 export default async function({ params }: Props) {
 
   const { id } = await params;
-  const products = seedProducts.filter(product => product.gender === id);
+  const products = seedProducts.filter(product =>`${product.gender}` === `${id}` );
 
-  const labels:Record<Category, string> = {
+  const labels:Record<string,string> = {
     'men' : 'para hombres',
     'women': 'para mujeres',
     'kid': 'para niños',
     'unisex': 'para todos',
   }
    
-   const labelsSubtitle:Record<Category, string> = {
+   const labelsSubtitle:Record<string, string> = {
     'men' : 'para ellos',
     'women': 'para ellas',
     'kid': 'para los peques',
@@ -42,8 +44,8 @@ export default async function({ params }: Props) {
      <>
           <Title 
           
-          title= {`Articulos  ${labels[id]}`}
-          subtitle={`Todos los productos ${labelsSubtitle[id]}`}
+          title= {`Articulos  ${labels[`${id}`]}`}
+          subtitle={`Todos los productos ${labelsSubtitle[`${id}`]}`}
           className="mb-2"
           />
     
