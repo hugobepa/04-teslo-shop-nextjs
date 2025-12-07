@@ -1,3 +1,4 @@
+mirar reparar fallo critico desde otra carpeta clonada para el hecho mirar "varios" al final
 sino hay imagenes aparece placeholder   const imagenVacia = '/imgs/placeholder.jpg'
 consent Cookies
 orderatbale usuario paginador, filtros
@@ -10,7 +11,7 @@ validar token celular (mirar node curso)
 toats cambio usuario  en listado users
 
 
-section_24_A_MantAdm_
+section_25_DespTienda_
 
 git log
 git reset --hard Numerocommit  
