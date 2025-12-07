@@ -1,0 +1,45 @@
+https://vercel.com/
+rama GitHub main o deploy
+
+1. dashboard--Vercel: botton -- add--new --Project o import project
+2. import git repository-- cuenta GitHub
+     --buscar reposiorio -botton import
+3.Configure Project:
+	nombre proyecto: next-teslo-shop
+	framework: next.js
+	root directory: ./
+	enviorement variables: copiar interior archivo .env y pegarlo todo en campo key ( se pega todo)
+		          eliminar variables:DB_USER
+					     DB_NAME
+					     DB_PASSWORD
+	botton deploy (tardar 2 min a 1h)
+
+4.congratulations:
+       botón continue dashboard
+       cambiar dominio: barra navegador-settings
+
+5.Project settings:
+
+	  deployment protection--
+
+		 vercel Authenticacion - disabled
+
+	  domains--- nombre del dominio --edit (cambiar nombre): tienda-fh.vercel.app ---save
+
+           nombre del proyecto apretar( arriba pagina) web inicial proyecto
+
+6. pagina inical proyecto:
+	   barra navegador--deployments
+7.deployments:
+	   escoger deployment hecho---las 3 puntos---promote to production ( y hacer click) esperar( 2min a 1 h)
+
+8.ir a "https://www.opengraph.xyz/" y pegar la nueva url ( ver en redes sociales y web)
+
+9.probas pagina (importante mirar PayPal estar en sandbox)
+		
+
+        
+
+
+
+	

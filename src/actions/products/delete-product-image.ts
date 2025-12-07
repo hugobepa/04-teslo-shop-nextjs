@@ -1,5 +1,3 @@
-//https://res.cloudinary.com/dmistskcm/image/upload/v1765051384/kfgufykooiooodobmnvg.avif
-//https://res.cloudinary.com/dmistskcm/image/upload/v1765051384/z4pcudgkjvejvalz4u5c.avif
 'use server'
 import prisma from '@/lib/prisma';
 import {v2 as cloudinary} from 'cloudinary';

@@ -1,0 +1,18 @@
+0.opcional https://neon.new/
+1.https://vercel.com/
+	--storage
+	  --postgress créate
+		--database name: teslo-db
+		--región: lo mas cerca
+		--créate
+	  --teslo-db
+	    psql -- copiar cadena conexión
+2.".env":
+	clonar y comentar la DATABASE_URL local
+	Y en la copia DATABASE_URL cambiar local por copiada en vercel
+
+3.crear BBDD en vercel,terminal: npx prisma migrate deploy ( o "dev")
+4.verificar tablas en vercel
+5.Opcional, cargar semillas a vercel: npm run seed
+6.verificar en vercel carga de datos a BBDD
+		

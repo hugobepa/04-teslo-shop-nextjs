@@ -1,0 +1,13 @@
+1.añadir a package.json:
+
+script:{
+….,
+"build": "npm run prisma:deploy && next build",
+...,
+"prisma:deploy": "npx prisma migrate deploy && prisma generate",
+…,
+}
+
+2.Opcional_hacer prueba nuevas ordenes, terminal proyecto: npm run build
+
+3. hacer commit "prisma command agregado" y subir repositorio github

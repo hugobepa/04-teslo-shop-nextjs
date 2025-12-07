@@ -1,0 +1,6 @@
+1. pasar últimos cambios a main, terminal proyecto:
+git checkout main
+git merge nombre_ultima_rama
+    dejar messange
+
+2.crear rama deploy para pasar cambios como antes

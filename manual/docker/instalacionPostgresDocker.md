@@ -29,7 +29,8 @@ DB_USER=postgres
 DB_NAME=teslo-shop
 DB_PASSWORD=123456
 
-
+#DATABASE_URL="postgresql://postgres:123456@localhost:5432/teslo-shop?schema=public"
+DATABASE_URL="postgresql://postgres:123456@localhost:5432/teslo-shop?schema=public"
 ````
 4. Docker desktop funcionando y corriendo
 
