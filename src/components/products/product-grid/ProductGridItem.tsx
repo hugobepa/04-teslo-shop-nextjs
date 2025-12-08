@@ -31,7 +31,18 @@ export const ProductGridItem = ({product}:Props) => {
                         className="w-full object-cover rounded"        
                       />  */}
 
-        
+               <ProductImage   
+                      
+                       src={product.images[0]}
+                        alt={product.title}
+                        width={500}
+                        height={500}
+                        className="w-full object-cover rounded"
+                       
+                      /> 
+
+
+{/* 
            <ProductImageGrid    
                       image={product.images[0]} 
                       title={product.title}
@@ -40,7 +51,7 @@ export const ProductGridItem = ({product}:Props) => {
                         className="w-full object-cover rounded"
                        
                        
-                      /> 
+                      />  */}
  
          {/* <Image
         src={`/products/${displayImage}`}//src={`/products/${product.images[0]}`}

@@ -1,4 +1,6 @@
+
 import Image from "next/image"
+
 
 interface Props {
     src?: string;
@@ -7,6 +9,7 @@ interface Props {
     height: number 
      style?: React.StyleHTMLAttributes<HTMLImageElement>['style'] 
     className?: React.StyleHTMLAttributes<HTMLImageElement>['className'] 
+     
 
 }
 
@@ -17,7 +20,7 @@ export const ProductImage = ({src,alt,width,height,className,style}:Props) => {
 
 // onMouseEnter={()=>setDisplayImage(product.images[1])}
 //         onMouseLeave={()=>setDisplayImage(product.images[0])}
-
+    
     return (
         <Image
             src={localSrc}
@@ -26,8 +29,6 @@ export const ProductImage = ({src,alt,width,height,className,style}:Props) => {
             height={height}
             className={className}
             style ={style}
-            
-            
         />
 
 
